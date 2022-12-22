@@ -1,7 +1,7 @@
 spending time_lock
 
 struct Datum {
-    lockUntil:    Time
+    lockUntil:   Time
     owner:       PubKeyHash
     beneficiary: PubKeyHash
 }
