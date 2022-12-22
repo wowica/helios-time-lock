@@ -1,0 +1,41 @@
+spending time_lock
+
+struct Datum {
+    lockUntil:    Time
+    owner:       PubKeyHash
+    beneficiary: PubKeyHash
+}
+
+func traceIfFalse(msg:String, test:Bool) -> Bool {
+    if (test) {
+        true
+    } else {
+        print (msg);
+        false
+    }
+}
+
+func main(datum: Datum, ctx: ScriptContext) -> Bool {
+    tx: Tx = ctx.tx;
+    hasTimeLockPassed: Bool = tx.time_range.is_after(datum.lockUntil);
+
+    if (hasTimeLockPassed) {
+        traceIfFalse("After time-lock but not signed by beneficiary",
+            tx.is_signed_by(datum.beneficiary))
+    } else {
+        traceIfFalse("Before time-lock but not signed by owner",
+            tx.is_signed_by(datum.owner))
+    }
+}
+
+// These values will be replaced when
+// building contract from validator.js
+const TIME_LOCK:    Int = 0
+const OWNER:        ByteArray = #
+const BENEFICIARY:  ByteArray = #
+
+const DATUM = Datum{
+    lockUntil: Time::new(TIME_LOCK),
+    owner: PubKeyHash::new(OWNER),
+    beneficiary: PubKeyHash::new(BENEFICIARY)
+}

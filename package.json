@@ -1,0 +1,16 @@
+{
+  "name": "helios-time-lock",
+  "version": "1.0.0",
+  "description": "A plutus script written in Helios",
+  "main": "validator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "node validator.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hyperionbt/helios": "^0.9.13"
+  },
+  "type": "module"
+}
