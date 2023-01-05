@@ -17,4 +17,12 @@ To generate all the artifacts needed to interact with the smart contract, run th
 $ npm run compile
 ```
 
-The artifacts should be generated on the `dist`folder.
+The artifacts should be generated on the `dist` folder.
+
+```
+$ tree dist
+dist
+├── datum.json
+├── validator.addr
+└── validator.json
+```

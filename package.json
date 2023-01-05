@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@hyperionbt/helios": "^0.9.13"
+    "@hyperionbt/helios": "^0.10"
   },
   "type": "module"
 }

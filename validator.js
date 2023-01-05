@@ -36,10 +36,11 @@ program.changeParam("BENEFICIARY", JSON.stringify(hexToBytes(beneficiaryPKH)));
 
 // must be set to false in order to print to log
 const uplc = program.compile(false);
+// set to false for mainnet address
+const IS_TESTNET = true;
 
 const scriptAddr = Address.
-    // set false for mainnet address
-    fromValidatorHash(true, uplc.validatorHash).
+    fromValidatorHash(uplc.validatorHash, null, IS_TESTNET).
     toBech32();
 
 console.log("\nGenerating Artifacts\n");
