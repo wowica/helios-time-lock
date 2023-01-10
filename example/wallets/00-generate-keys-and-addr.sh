@@ -23,3 +23,4 @@ cardano-cli address key-hash \
 
 echo "Generated files:"
 ls -l wallets | grep -i $keyName
+
