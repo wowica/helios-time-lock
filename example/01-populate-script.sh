@@ -21,8 +21,6 @@ txSignatory=""
 datumHASH=$(cardano-cli transaction hash-script-data --script-data-file ../dist/datum.json)
 
 tmpBuild=$(mktemp)
-# Amount in Lovelace is ADA * 1_000_000
-amountInLL=$(( amountInADA*1000000 ))
 
 cardano-cli transaction build \
   --testnet-magic 1 \
@@ -46,4 +44,4 @@ cardano-cli transaction submit \
   --testnet-magic 1 \
   --tx-file $tmpSig
 
-cardano-cli transaction txid --tx-file tx01.signed
+cardano-cli transaction txid --tx-file $tmpSig

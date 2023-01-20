@@ -10,7 +10,7 @@
 # Script UTXO which will be spent from
 scriptUTXO="" 
 # Populate with current slot from `cardano-cli query tip` command
-currentSlot="" 
+currentSlot=""
 # Needed for collateral
 payorUTXO=""
 # Change address
