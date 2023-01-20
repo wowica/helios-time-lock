@@ -8,6 +8,7 @@ The [validator.js](validator.js) file compiles Helios and generates the final ar
 
 The [Helios](https://github.com/Hyperion-BT/Helios) library is _pure_ JavaScript 🎉   
 Install dependencies with either `npm install` or `yarn`.  
+It has been tested with NodeJS version `19.4.0` but it should work with other recent versions as well.
 
 ## Compiling and Generating Artifacts
 
