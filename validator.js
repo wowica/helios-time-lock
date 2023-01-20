@@ -16,8 +16,8 @@ import fs from "fs";
 // Replace the following pubkeyhash values with your own values.
 // These values can be generated using the following command:
 // $ cardano-cli address key-hash --payment-verification-key-file <payment.vkey>
-const ownerPKH = "6a317a7ca468cbc6ea3f0247241859f87db8beaeab288d1d69845ba9"
-const beneficiaryPKH = "6bd95fcacb2373d68ae094fdefcc4811358e11ca0306a9f4b3bcbbe8"
+const ownerPKH = ""
+const beneficiaryPKH = ""
 
 // Used to set TIME_LOCK
 const fiveMinsFromNow = (new Date()).getTime() + 1000 * 60 * 5;
