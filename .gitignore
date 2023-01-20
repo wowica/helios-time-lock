@@ -1,1 +1,8 @@
 node_modules
+example/wallets/**.addr
+example/wallets/**.pkh
+example/wallets/**.skey
+example/wallets/**.vkey
+example/**.body
+example/**.signed
+example/protocol.json

@@ -21,6 +21,6 @@ cardano-cli address key-hash \
   --payment-verification-key-file $keyName.vkey \
   --out-file $keyName.pkh
 
-echo "Generated files:"
+echo "Generated files in wallets folder:"
 ls -l wallets | grep -i $keyName
 
