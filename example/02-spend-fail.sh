@@ -32,4 +32,4 @@ cardano-cli transaction build \
   --protocol-params-file protocol-params.json \
   --out-file txFail.body # should not be created since command will fail
 
-[ $? -eq 0 ] || (echo "Error building transaction" && exit 1)
+[ $? -eq 0 ]  || { echo "Error building transaction"; exit 1; }

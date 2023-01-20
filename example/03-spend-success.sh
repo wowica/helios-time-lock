@@ -28,7 +28,7 @@ cardano-cli transaction build \
   --protocol-params-file protocol-params.json \
   --out-file tx03.body
 
-[ $? -eq 0 ]  || (echo "Error building transaction" && exit 1)
+[ $? -eq 0 ]  || { echo "Error building transaction"; exit 1; }
 
 cardano-cli transaction sign \
   --tx-body-file tx03.body \

@@ -19,7 +19,7 @@ cardano-cli transaction build \
   --tx-out-datum-hash $datumHASH \
   --out-file tx01.body
 
-[ $? -eq 0 ]  || (echo "Error building transaction" && exit 1)
+[ $? -eq 0 ]  || { echo "Error building transaction"; exit 1; }
 
 cardano-cli transaction sign \
   --tx-body-file tx01.body \
