@@ -19,6 +19,12 @@ payorPubKeyHash=$()
 # Payor Signing key
 txSignatory=""
 
+####################################
+### No need to change code below ###
+####################################
+
+tmpBuild=$(mktemp)
+
 cardano-cli transaction build \
   --testnet-magic 1 \
   --change-address ${payorADDR} \
@@ -30,18 +36,20 @@ cardano-cli transaction build \
   --required-signer-hash ${payorPubKeyHash} \
   --invalid-before ${currentSlot} \
   --protocol-params-file protocol.json \
-  --out-file tx03.body
+  --out-file $tmpBuild
 
 [ $? -eq 0 ]  || { echo "Error building transaction"; exit 1; }
 
+tmpSig=$(mktemp)
+
 cardano-cli transaction sign \
-  --tx-body-file tx03.body \
+  --tx-body-file $tmpBuild \
   --signing-key-file $txSignatory \
   --testnet-magic 1 \
-  --out-file tx03.signed
+  --out-file $tmpSig
 
 cardano-cli transaction submit \
   --testnet-magic 1 \
-  --tx-file tx03.signed
+  --tx-file $tmpSig
 
-cardano-cli transaction txid --tx-file tx03.signed
+cardano-cli transaction txid --tx-file $tmpSig

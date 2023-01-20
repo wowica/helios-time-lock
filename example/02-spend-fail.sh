@@ -18,6 +18,10 @@ payorADDR=$()
 # PKH
 payorPubKeyHash=$()
 
+####################################
+### No need to change code below ###
+####################################
+
 # Should fail since signer is neither owner or beneficiary
 cardano-cli transaction build \
   --testnet-magic 1 \
